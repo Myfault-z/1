@@ -1,0 +1,274 @@
+@charset 'utf8';
+
+@import '../lib/hotcss-master/src/px2rem.scss';
+
+$theme-color:#FF410E;
+$theme-shadow:0 px2rem(10) px2rem(50) rgba($color: #000000, $alpha: 0.16);
+$theme-border-radius: px2rem(60);
+
+@keyframes player{
+    from{transform:rotate(0deg)};
+    // 50%{transform:rotate(180deg)};
+    to{transform:rotate(360deg)};
+}
+
+.container{
+    padding-bottom: px2rem(200);
+    
+}
+// header 我的音乐
+.myMusic{
+    padding: px2rem(92) px2rem(25);
+    overflow: hidden;
+    min-width: px2rem(320);
+    max-width: px2rem(1080);
+    margin: 0 auto;
+    
+
+    h2{
+        text-align: center;
+        font-size: px2rem(80);
+        color: #707070;
+        font-weight: bold;
+    }
+    .myMusic-1{
+        padding-top: px2rem(110);
+        display: flex;
+        justify-content: space-between;
+        height: px2rem(500);
+
+        .myMusic-local{
+            position: relative;
+            flex: 0 0 px2rem(500);
+            height: px2rem(500);
+            line-height: px2rem(500);
+            border-radius: px2rem(60);
+            text-align: center;
+            box-shadow: $theme-shadow;
+            i{
+                display: block;
+                color: $theme-color;
+                font-size: px2rem(200);
+            }
+            span{
+                position: absolute;
+                left: px2rem(149);
+                bottom: px2rem(60);
+                font-size: px2rem(50);
+                line-height: px2rem(40);
+            }
+        }
+        .myMusic-r{
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 px2rem(500);
+            justify-content: space-between;
+            align-content: space-between;
+
+            .myMusic-other{
+                height: px2rem(235);
+                border-radius: $theme-border-radius;
+                box-shadow: $theme-shadow;
+                text-align: center;
+                line-height: px2rem(235);
+                i{
+                    float: left;
+                    margin-left: px2rem(80);
+                    font-size: px2rem(80);
+                    color: $theme-color;
+                }
+                span{
+                    float: left;
+                    margin-left: px2rem(80);
+                    font-size: px2rem(40);
+                    color: #707070;
+                }
+            }
+        }
+    }
+    .myMusic-2{
+        margin-top: px2rem(30);
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        .myMusic-other{
+            width: px2rem(500);
+            height: px2rem(235);
+            border-radius: $theme-border-radius;
+            box-shadow: $theme-shadow;
+            text-align: center;
+            line-height: px2rem(235);
+            i{
+                float: left;
+                margin-left: px2rem(80);
+                font-size: px2rem(80);
+                color: $theme-color;
+            }
+            span{
+                float: left;
+                margin-left: px2rem(80);
+                font-size: px2rem(40);
+                color: #707070;
+            }
+        }
+    }
+}
+
+// 歌单区域
+.musicList{
+        margin: 0 auto;
+        min-width: px2rem(320);
+        max-width: px2rem(1080);
+        padding: 0 px2rem(25);
+    .title{
+        height: px2rem(235);
+        line-height: px2rem(235);
+        border-radius: $theme-border-radius;
+        text-align: center;
+        box-shadow: $theme-shadow;
+        position: relative;
+        color: #707070;
+
+        h2{
+            font-size: px2rem(60);
+            font-weight: bold;
+        }
+        i{
+            font-size: px2rem(60);
+            position: absolute;
+            right: px2rem(115);
+            top: 0;
+            transform: rotate(180deg);
+            transition: transform 0.5s;
+        }
+        .active{
+            transform: rotate(0deg);
+            transition: transform 0.5s;
+        }
+    }
+    .on{
+        display: none;
+    }
+    .list{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .list-item{
+            a{
+                display: block;
+                width: px2rem(900);
+                height: px2rem(150);
+                line-height: px2rem(150);
+                box-shadow: $theme-shadow;
+                margin: px2rem(25) auto 0;
+                border-radius: $theme-border-radius;
+
+                img{
+                    margin-top: px2rem(25);
+                    margin-left: px2rem(100);
+                    height: px2rem(100);
+                    width: px2rem(100);
+                    border-radius: px2rem(30);
+                }
+                .num{
+                    float: right;
+                    font-size: px2rem(30);
+                    margin-right: px2rem(100);
+                }
+                .zj{
+                    float: right;
+                    font-size: px2rem(40);
+                    margin-right: px2rem(30);
+                }
+            }
+        }
+    }
+}
+
+// 底部导航栏
+.nav{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: px2rem(120);
+    background: url(../img/nav.png) no-repeat;
+    background-size: 100% 100%;
+    
+    .player{
+        margin: 0 auto;
+        height: px2rem(150);
+        width: px2rem(150);
+        position: relative;
+        
+        img{
+            // animation: player 2s infinite;
+            position: absolute;
+            height: px2rem(150);
+            width: px2rem(150);
+            border-radius: 50%;
+            bottom: px2rem(70);
+        }
+    }
+
+    .nav-list-l{
+        display: flex;
+        float: left;
+        justify-content: space-around;
+        width: px2rem(400);
+        margin-top: px2rem(-120);
+        padding-left: px2rem(25);
+        .nav-item{
+            text-align: center;
+            
+            a{
+                padding-bottom: px2rem(10);
+                color: #fff;
+                i{
+                    display: block;
+                    margin: 0 auto px2rem(10);
+                    width: px2rem(40);
+                    height: px2rem(40);
+                    font-size: px2rem(40);
+                }
+                span{
+                    font-size: px2rem(30);
+                }
+            }
+            .active{
+                color: $theme-color;
+            }
+        }
+    }
+    .nav-list-r{
+        display: flex;
+        float: right;
+        justify-content: space-around;
+        width: px2rem(400);
+        margin-top: px2rem(-120);
+        padding-right: px2rem(25);
+        .nav-item{
+            text-align: center;
+            
+            a{
+                padding-bottom: px2rem(10);
+                color: #fff;
+                i{
+                    display: block;
+                    margin: 0 auto px2rem(10);
+                    width: px2rem(40);
+                    height: px2rem(40);
+                    font-size: px2rem(40);
+                }
+                span{
+                    font-size: px2rem(30);
+                }
+            }
+            .active{
+                color: $theme-color;
+            }
+        }
+    }
+    
+}

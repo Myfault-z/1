@@ -1,0 +1,277 @@
+@charset 'utf8';
+
+@import '../lib/hotcss-master/src/px2rem.scss';
+
+$theme-color:#FF410E;
+
+.container{
+    position: absolute;
+    padding: px2rem(50) px2rem(35);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #707070;
+}
+
+// 标题区域
+.top{
+    font-size: px2rem(50);
+    .icon-l{
+        float: left;
+        font-size: px2rem(50);
+
+    }
+    .icon-r{
+        font-size: px2rem(50);
+        float: right;
+    }
+    .top-title{
+        margin: 0 auto;
+        text-align: center;
+        .musicName{
+            display: block;
+            font-weight: 600;
+            margin-bottom: px2rem(30);    
+        }
+        .playerName{
+            font-size: px2rem(30);        
+        }
+
+    }
+}
+
+// main区域
+.main{
+    .main-all{
+        .player-main{
+            text-align: center;
+            display: none;
+            height: px2rem(1160);
+
+            
+            img{
+                margin: px2rem(120) auto px2rem(170);
+                width: px2rem(730);
+                height: px2rem(730);
+                border-radius: 50%;
+                border: px2rem(10) solid $theme-color;
+                transform: rotate(45deg);
+                box-shadow: 0 0 px2rem(99) rgba($color: #000000, $alpha: 0.4);
+            }
+            .lyrics{
+                color: $theme-color;
+                font-size: px2rem(55);
+                margin-bottom: px2rem(130);
+            }
+        }
+        .comment{
+            display: none;
+            height: px2rem(1160);
+            .comment-list{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-top: px2rem(60);
+                .comment-item{
+                    width: px2rem(840);
+                    height: px2rem(160);
+                    line-height: px2rem(160);
+                    border-radius: px2rem(160) px2rem(160);
+                    box-shadow: 0 0 px2rem(50) rgba($color: #000000, $alpha: 0.4);
+                    margin: 0 auto px2rem(40);
+                    font-size: px2rem(40);
+                    color: #707070;
+                    .user{
+                        float: left;
+                        font-weight: 600;
+                        margin-left: px2rem(60);
+                    }
+                    .val{
+                        float: left;
+                        margin-left: px2rem(40);
+
+                    }
+                    i{
+                        float: right;
+                        margin-right: px2rem(60);
+                        font-size: px2rem(40);
+                    }
+                    .active{
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+        .musicDetails{
+            display: none;
+            height: px2rem(1080);
+            font-size: px2rem(35);
+
+            img{
+                display: block;
+                margin: px2rem(80) auto 0;
+                width: px2rem(500);
+                height: px2rem(500);
+                border-radius: 50%;
+            }
+            .detTitle{
+                text-align: center;
+                margin: 0 auto;
+                padding-top: px2rem(50);
+            }
+            .detTop{
+                
+                width: px2rem(790);
+                margin: 0 auto;
+                line-height: px2rem(60);
+                .detTop-l{
+                    text-align: center;
+                    float: left;
+                    p{
+                    }
+                }
+                .detTop-r{
+                    text-align: center;
+                    float: right;
+                }
+            }
+            .detBottom{
+                h2{
+                    text-align: center;
+                    margin: px2rem(35) auto;
+                    font-size: px2rem(45);
+                }
+                p{
+                    font-size: px2rem(30);
+                    text-indent: 2em;
+                    line-height: px2rem(45);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: px2rem(790);
+                    height: px2rem(230);
+                    margin: 0 auto;
+                }
+            }
+        }
+        .on{
+            display: block;
+        }
+    }
+    .progressBar{
+        width: px2rem(860);
+        margin: 0 auto;
+        .time{
+            font-size: px2rem(30);
+            color: #707070;
+            .time-l{
+                float: left;
+            }
+            .time-r{
+                float: right;
+            }
+        }
+        .bar{
+            margin-top: px2rem(40);
+            position: relative;
+            .bar1{
+                border-radius:  px2rem(10) px2rem(10);
+                background: #707070 ;
+                height: px2rem(10);
+            }
+            .bar2{
+                position: absolute;
+                width: 50%;
+                height: px2rem(10);
+                top: 0;
+                left: 0;
+                border-radius:  px2rem(10) px2rem(10);
+                background: $theme-color;
+            }
+            .circle{
+                position: absolute;
+                top: px2rem(-21);
+                left: 0;
+                margin-left: px2rem(-21);
+                width: px2rem(42);
+                height: px2rem(42);
+                border-radius: 50%;
+                background: #fff;
+                box-sizing: border-box;
+                border: 1px solid #707070;
+
+            }
+        }
+    }
+    .circleNav{
+        margin: px2rem(95) auto px2rem(80);
+        width: px2rem(115);
+        .navBtn{
+            float: left;
+            width: px2rem(25);
+            height: px2rem(25);
+            border-radius: 50%;
+            background: #707070;
+            margin-right: px2rem(20);
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        .active{
+            background: $theme-color;
+        }
+    }
+    .controlBtn{
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: px2rem(800);
+        height: px2rem(120);
+        line-height: px2rem(120);
+        i{
+            font-size: px2rem(120);
+        }
+        .next{
+            transform: rotate(180deg);
+        }
+    }
+}
+.footerBtn{
+    display: flex;
+    justify-content: space-between;
+    width: px2rem(850);
+    margin: px2rem(120) auto 0;
+    padding-bottom: px2rem(50); 
+    i{
+        font-size: px2rem(60);
+    }
+    .active{
+        color: $theme-color;
+    }
+}
+
+// 背景图
+// .background{
+//     position: absolute;
+//     padding: px2rem(95) px2rem(35);
+//     background: url('../img/zj/dengni.png') no-repeat;
+//     background-size: cover;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     z-index: -1;    
+//     &::after{
+//         content: "";
+//         width:100%;
+//         height:100%;
+//         position: absolute;
+//         left:0;
+//         top:0;
+//         background: inherit;
+//         filter: blur(15px);
+//     }
+// }
